@@ -1,0 +1,2 @@
+# gunbreeder
+ Simple RNG-based gun generator. Randomly generate 2 parents and allow the program to mix their stats.
