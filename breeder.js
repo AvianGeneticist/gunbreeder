@@ -8,6 +8,7 @@ var gunStatsBase = {
     rawProjcount: 0,
     rawReSpeed: 0,
     rawMobility: 0,
+    rawWeight: 0,
 
     //Multipliers added by guns
     multDamage: 0,
@@ -18,6 +19,7 @@ var gunStatsBase = {
     multProjCount: 0,
     multReSpeed: 0,
     multMobility: 0,
+    multWeight: 0,
 }
 
 function createParentGun() {
@@ -41,6 +43,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectile Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (71 - 45) + 45);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.20
+        gunStatsBase.multROF = 1.20
+        gunStatsBase.multBlastRadius = 1.20
+        gunStatsBase.multProjCount = 1.20
+        gunStatsBase.multMagCap = 1.20
+        gunStatsBase.multMobility = 1.00
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 0.90
+        gunStatsBase.multReSpeed = 1.00
+        gunStatsBase.multWeight = 1.00
         break;
         case 1: //Battle rifle; higher punch with lower ROF and greater potential inaccuracy.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Battle Rifle"
@@ -60,6 +80,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectile Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (81 - 65) + 65);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.35
+        gunStatsBase.multROF = 1.15
+        gunStatsBase.multBlastRadius = 1.25
+        gunStatsBase.multProjCount = 1.25
+        gunStatsBase.multMagCap = 1.10
+        gunStatsBase.multMobility = 1.00
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 1.00
+        gunStatsBase.multReSpeed = 1.10
+        gunStatsBase.multWeight = 1.10
         break;
         case 2: //PDW; lesser accuracy and damage than either automatic rifle type, but very fast firing and wider magazine pool.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Personal Defense Weapon"
@@ -79,6 +117,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectile Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (61 - 35) + 35);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.10
+        gunStatsBase.multROF = 1.30
+        gunStatsBase.multBlastRadius = 1.10
+        gunStatsBase.multProjCount = 1.00
+        gunStatsBase.multMagCap = 1.10
+        gunStatsBase.multMobility = 1.1
+        //Subtractive multipliers. Smaller = Better
+        gunStatsBase.multSpread = 1.10
+        gunStatsBase.multReSpeed = 0.85
+        gunStatsBase.multWeight = 0.95
         break;
         case 3: //SAW; similar traits to the assault rifle, but with deeper reserves and worse handling.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Squad Automatic Weapon"
@@ -98,6 +154,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectile Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (81 - 65) + 65);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.20
+        gunStatsBase.multROF = 1.25
+        gunStatsBase.multBlastRadius = 1.10
+        gunStatsBase.multProjCount = 1.10
+        gunStatsBase.multMagCap = 1.40
+        gunStatsBase.multMobility = 0.90
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 1.15
+        gunStatsBase.multReSpeed = 1.10
+        gunStatsBase.multWeight = 1.10
         break;
         case 4: //LMG; to a SAW what a Battle Rifle is to an Assault Rifle. Extremely slow, but with deep reserves and good punch.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Light Machine Gun"
@@ -117,6 +191,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectile Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (86 - 75) + 75);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.30
+        gunStatsBase.multROF = 1.15
+        gunStatsBase.multBlastRadius = 1.30
+        gunStatsBase.multProjCount = 1.30
+        gunStatsBase.multMagCap = 1.80
+        gunStatsBase.multMobility = 1.00
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 1.20
+        gunStatsBase.multReSpeed = 1.75
+        gunStatsBase.multWeight = 1.4
         break;
         case 5: //Hunting Shotgun; remarkable power and generally better precision than its automatic counterpart.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Hunting Shotgun"
@@ -136,6 +228,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectiles Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (71 - 55) + 55);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.60
+        gunStatsBase.multROF = 0.90
+        gunStatsBase.multBlastRadius = 0.60
+        gunStatsBase.multProjCount = 1.50
+        gunStatsBase.multMagCap = 0.80
+        gunStatsBase.multMobility = 1.25
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 1.10
+        gunStatsBase.multReSpeed = 0.95
+        gunStatsBase.multWeight = 1.00
         break;
         case 6: //Tactical Shotgun; great power at close-mid range due to its higher ROF with larger counts of projectiles.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Tactical Shotgun"
@@ -155,6 +265,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectiles Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (81 - 70) + 70);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.30
+        gunStatsBase.multROF = 1.00
+        gunStatsBase.multBlastRadius = 0.40
+        gunStatsBase.multProjCount = 1.25
+        gunStatsBase.multMagCap = 1.10
+        gunStatsBase.multMobility = 1.15
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 1.20
+        gunStatsBase.multReSpeed = 1.05
+        gunStatsBase.multWeight = 1.00
         break;
         case 7: //Sniper rifle; exceptional single shot damage and precision, but poor handling and close-range performance.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Sniper Rifle"
@@ -178,6 +306,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectile Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (91 - 70) + 70);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.80
+        gunStatsBase.multROF = 0.50
+        gunStatsBase.multBlastRadius = 1.30
+        gunStatsBase.multProjCount = 0.60
+        gunStatsBase.multMagCap = 0.80
+        gunStatsBase.multMobility = 1.1
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 0.40
+        gunStatsBase.multReSpeed = 1.00
+        gunStatsBase.multWeight = 1.00
         break;
         case 8: //Marksman rifle; still high single shot damage, but fast fire rate than a sniper rifle with slightly lower accuracy.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Marksman Rifle"
@@ -197,6 +343,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectile Per Shot"
         gunStatsBase.rawBlastRadius = 0;
         document.getElementById("Parent1BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (81 - 70) + 70);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.50
+        gunStatsBase.multROF = 1.05
+        gunStatsBase.multBlastRadius = 1.30
+        gunStatsBase.multProjCount = 0.90
+        gunStatsBase.multMagCap = 1.10
+        gunStatsBase.multMobility = 1.05
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 1.10
+        gunStatsBase.multReSpeed = 0.95
+        gunStatsBase.multWeight = 1.00
         break;
         case 9: //Anti-materiel rifle. Even less wieldly than the sniper rifle, but devastating on hit with a chance to have a blast radius.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Anti-Materiel Rifle"
@@ -224,6 +388,24 @@ function createParentGun() {
         } else {
             document.getElementById("Parent1BlastRad").innerHTML = gunStatsBase.rawBlastRadius + " Meter Blast Radius"
         }
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (96 - 85) + 85);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 2.20
+        gunStatsBase.multROF = 0.70
+        gunStatsBase.multBlastRadius = 1.80
+        gunStatsBase.multProjCount = 0.50
+        gunStatsBase.multMagCap = 0.50
+        gunStatsBase.multMobility = 0.90
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 1.10
+        gunStatsBase.multReSpeed = 0.95
+        gunStatsBase.multWeight = 1.00
         break;
         case 10: //Grenade Launcher; not precise, but hee hoo big boom.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Grenade Launcher"
@@ -247,6 +429,24 @@ function createParentGun() {
         document.getElementById("Parent1ProjCount").innerHTML = gunStatsBase.rawProjcount + " Projectile Per Shot"
         gunStatsBase.rawBlastRadius = Math.floor(Math.random() * (6 - 2) + 2);
         document.getElementById("Parent1BlastRad").innerHTML = gunStatsBase.rawBlastRadius + " Meter Blast Radius"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gunStatsBase.rawWeight = Math.floor(Math.random() * (86 - 80) + 80);
+        if (gunStatsBase.rawWeight >= 50) {
+            document.getElementById("Parent1Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gunStatsBase.multDamage = 1.80
+        gunStatsBase.multROF = 0.70
+        gunStatsBase.multBlastRadius = 2.00
+        gunStatsBase.multProjCount = 0.40
+        gunStatsBase.multMagCap = 0.80
+        gunStatsBase.multMobility = 0.90
+        //Subtractive multipliers. Smaller = Better.
+        gunStatsBase.multSpread = 1.05
+        gunStatsBase.multReSpeed = 1.30
+        gunStatsBase.multWeight = 1.10
         break;
     }
     breedGun()
@@ -262,6 +462,7 @@ var gun2StatsBase = {
     rawProjcount: 0,
     rawReSpeed: 0,
     rawMobility: 0,
+    rawWeight: 0,
 
     //Multipliers added by guns
     multDamage: 0,
@@ -272,6 +473,7 @@ var gun2StatsBase = {
     multProjCount: 0,
     multReSpeed: 0,
     multMobility: 0,
+    multWeight: 0,
 }
 
 function createParentGun2() {
@@ -295,6 +497,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectile Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (71 - 45) + 45);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.20
+        gun2StatsBase.multROF = 1.20
+        gun2StatsBase.multBlastRadius = 1.20
+        gun2StatsBase.multProjCount = 1.20
+        gun2StatsBase.multMagCap = 1.20
+        gun2StatsBase.multMobility = 1.00
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 0.90
+        gun2StatsBase.multReSpeed = 1.00
+        gun2StatsBase.multWeight = 1.00
         break;
         case 1: //Battle rifle; higher punch with lower ROF and greater potential inaccuracy.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Battle Rifle"
@@ -314,6 +534,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectile Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (81 - 65) + 65);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.35
+        gun2StatsBase.multROF = 1.15
+        gun2StatsBase.multBlastRadius = 1.25
+        gun2StatsBase.multProjCount = 1.25
+        gun2StatsBase.multMagCap = 1.10
+        gun2StatsBase.multMobility = 1.00
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 1.00
+        gun2StatsBase.multReSpeed = 1.10
+        gun2StatsBase.multWeight = 1.10
         break;
         case 2: //PDW; lesser accuracy and damage than either automatic rifle type, but very fast firing and wider magazine pool.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Personal Defense Weapon"
@@ -333,6 +571,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectile Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (61 - 35) + 35);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.10
+        gun2StatsBase.multROF = 1.30
+        gun2StatsBase.multBlastRadius = 1.10
+        gun2StatsBase.multProjCount = 1.00
+        gun2StatsBase.multMagCap = 1.10
+        gun2StatsBase.multMobility = 1.1
+        //Subtractive multipliers. Smaller = Better
+        gun2StatsBase.multSpread = 1.10
+        gun2StatsBase.multReSpeed = 0.85
+        gun2StatsBase.multWeight = 0.95
         break;
         case 3: //SAW; similar traits to the assault rifle, but with deeper reserves and worse handling.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Squad Automatic Weapon"
@@ -352,6 +608,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectile Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (81 - 65) + 65);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.20
+        gun2StatsBase.multROF = 1.25
+        gun2StatsBase.multBlastRadius = 1.10
+        gun2StatsBase.multProjCount = 1.10
+        gun2StatsBase.multMagCap = 1.40
+        gun2StatsBase.multMobility = 0.90
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 1.15
+        gun2StatsBase.multReSpeed = 1.10
+        gun2StatsBase.multWeight = 1.10
         break;
         case 4: //LMG; to a SAW what a Battle Rifle is to an Assault Rifle. Extremely slow, but with deep reserves and good punch.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Light Machine Gun"
@@ -371,6 +645,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectile Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (86 - 75) + 75);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.30
+        gun2StatsBase.multROF = 1.15
+        gun2StatsBase.multBlastRadius = 1.30
+        gun2StatsBase.multProjCount = 1.30
+        gun2StatsBase.multMagCap = 1.80
+        gun2StatsBase.multMobility = 1.00
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 1.20
+        gun2StatsBase.multReSpeed = 1.75
+        gun2StatsBase.multWeight = 1.4
         break;
         case 5: //Hunting Shotgun; remarkable power and generally better precision than its automatic counterpart.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Hunting Shotgun"
@@ -390,6 +682,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectiles Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (71 - 55) + 55);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.60
+        gun2StatsBase.multROF = 0.90
+        gun2StatsBase.multBlastRadius = 0.60
+        gun2StatsBase.multProjCount = 1.50
+        gun2StatsBase.multMagCap = 0.80
+        gun2StatsBase.multMobility = 1.25
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 1.10
+        gun2StatsBase.multReSpeed = 0.95
+        gun2StatsBase.multWeight = 1.00
         break;
         case 6: //Tactical Shotgun; great power at close-mid range due to its higher ROF with larger counts of projectiles.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Tactical Shotgun"
@@ -409,6 +719,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectiles Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (81 - 70) + 70);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.30
+        gun2StatsBase.multROF = 1.00
+        gun2StatsBase.multBlastRadius = 0.40
+        gun2StatsBase.multProjCount = 1.25
+        gun2StatsBase.multMagCap = 1.10
+        gun2StatsBase.multMobility = 1.15
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 1.20
+        gun2StatsBase.multReSpeed = 1.05
+        gun2StatsBase.multWeight = 1.00
         break;
         case 7: //Sniper rifle; exceptional single shot damage and precision, but poor handling and close-range performance.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Sniper Rifle"
@@ -432,6 +760,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectile Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (91 - 70) + 70);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.80
+        gun2StatsBase.multROF = 0.50
+        gun2StatsBase.multBlastRadius = 1.30
+        gun2StatsBase.multProjCount = 0.60
+        gun2StatsBase.multMagCap = 0.80
+        gun2StatsBase.multMobility = 1.1
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 0.40
+        gun2StatsBase.multReSpeed = 1.00
+        gun2StatsBase.multWeight = 1.00
         break;
         case 8: //Marksman rifle; still high single shot damage, but fast fire rate than a sniper rifle with slightly lower accuracy.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Marksman Rifle"
@@ -451,6 +797,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectile Per Shot"
         gun2StatsBase.rawBlastRadius = 0;
         document.getElementById("Parent2BlastRad").innerHTML = "Direct Impact Only"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (81 - 70) + 70);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.50
+        gun2StatsBase.multROF = 1.05
+        gun2StatsBase.multBlastRadius = 1.30
+        gun2StatsBase.multProjCount = 0.90
+        gun2StatsBase.multMagCap = 1.10
+        gun2StatsBase.multMobility = 1.05
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 1.10
+        gun2StatsBase.multReSpeed = 0.95
+        gun2StatsBase.multWeight = 1.00
         break;
         case 9: //Anti-materiel rifle. Even less wieldly than the sniper rifle, but devastating on hit with a chance to have a blast radius.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Anti-Materiel Rifle"
@@ -478,6 +842,24 @@ function createParentGun2() {
         } else {
             document.getElementById("Parent2BlastRad").innerHTML = gun2StatsBase.rawBlastRadius + " Meter Blast Radius"
         }
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (96 - 85) + 85);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 2.20
+        gun2StatsBase.multROF = 0.70
+        gun2StatsBase.multBlastRadius = 1.80
+        gun2StatsBase.multProjCount = 0.50
+        gun2StatsBase.multMagCap = 0.50
+        gun2StatsBase.multMobility = 0.90
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 1.10
+        gun2StatsBase.multReSpeed = 0.95
+        gun2StatsBase.multWeight = 1.00
         break;
         case 10: //Grenade Launcher; not precise, but hee hoo big boom.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Grenade Launcher"
@@ -501,6 +883,24 @@ function createParentGun2() {
         document.getElementById("Parent2ProjCount").innerHTML = gun2StatsBase.rawProjcount + " Projectile Per Shot"
         gun2StatsBase.rawBlastRadius = Math.floor(Math.random() * (6 - 2) + 2);
         document.getElementById("Parent2BlastRad").innerHTML = gun2StatsBase.rawBlastRadius + " Meter Blast Radius"
+        //Weight. Determines if weapons can be single- or dual-wielded. If a weapon's weight is below 50, it can be dual-wielded.
+        gun2StatsBase.rawWeight = Math.floor(Math.random() * (86 - 80) + 80);
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("Parent2Weight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
+        }
+        //Additive multipliers. Bigger = Better.
+        gun2StatsBase.multDamage = 1.80
+        gun2StatsBase.multROF = 0.70
+        gun2StatsBase.multBlastRadius = 2.00
+        gun2StatsBase.multProjCount = 0.40
+        gun2StatsBase.multMagCap = 0.80
+        gun2StatsBase.multMobility = 0.90
+        //Subtractive multipliers. Smaller = Better.
+        gun2StatsBase.multSpread = 1.05
+        gun2StatsBase.multReSpeed = 1.30
+        gun2StatsBase.multWeight = 1.10
         break;
     }
     breedGun()
@@ -516,32 +916,50 @@ var childStatsBase = {
     rawProjcount: 0,
     rawReSpeed: 0,
     rawMobility: 0,
+    rawWeight: 0,
 }
 
 function breedGun() {
-    childStatsBase.rawDamage = (gunStatsBase.rawDamage + gun2StatsBase.rawDamage) / 2
+    childStatsBase.rawDamage = (((gunStatsBase.rawDamage + gun2StatsBase.rawDamage) / 2) * ((gunStatsBase.multDamage + gun2StatsBase.multDamage) / 2));
+    childStatsBase.rawDamage = Math.ceil(childStatsBase.rawDamage)
     document.getElementById("ChildDamage").innerHTML = childStatsBase.rawDamage + " Damage Per Shot"
-    childStatsBase.rawROF = (gunStatsBase.rawROF + gun2StatsBase.rawROF) / 2
+    childStatsBase.rawROF = (((gunStatsBase.rawROF + gun2StatsBase.rawROF) / 2) * ((gunStatsBase.multROF + gun2StatsBase.multROF) / 2));
+    childStatsBase.rawROF = Math.ceil(childStatsBase.rawROF)
     document.getElementById("ChildROF").innerHTML = childStatsBase.rawROF + " Rounds Per Minute"
-    childStatsBase.rawSpread = (gunStatsBase.rawSpread + gun2StatsBase.rawSpread) / 2
+    childStatsBase.rawSpread = (((gunStatsBase.rawSpread + gun2StatsBase.rawSpread) / 2) * ((gunStatsBase.multSpread + gun2StatsBase.multSpread) / 2));
+    childStatsBase.rawSpread = Math.ceil(childStatsBase.rawSpread)
     document.getElementById("ChildSpread").innerHTML = childStatsBase.rawSpread + " Degrees Spread"
-    childStatsBase.rawMagCap = (gunStatsBase.rawMagCap + gun2StatsBase.rawMagCap) / 2
+    childStatsBase.rawMagCap = (((gunStatsBase.rawMagCap + gun2StatsBase.rawMagCap) / 2) * ((gunStatsBase.multMagCap + gun2StatsBase.multMagCap) / 2));
+    childStatsBase.rawMagCap = Math.ceil(childStatsBase.rawMagCap)
     document.getElementById("ChildMagCap").innerHTML = childStatsBase.rawMagCap + " Rounds Per Magazine"
-    childStatsBase.rawBlastRadius = (gunStatsBase.rawBlastRadius + gun2StatsBase.rawBlastRadius) / 2
+    childStatsBase.rawBlastRadius = (((gunStatsBase.rawBlastRadius + gun2StatsBase.rawBlastRadius) / 2) * ((gunStatsBase.multBlastRadius + gun2StatsBase.multBlastRadius) / 2));
+    childStatsBase.rawBlastRadius = Math.floor(childStatsBase.rawBlastRadius)
     if (childStatsBase.rawBlastRadius == 0) {
         document.getElementById("ChildBlastRad").innerHTML = "Direct Impact Only"
     } else {
         document.getElementById("ChildBlastRad").innerHTML = childStatsBase.rawBlastRadius + " Meter Blast Radius"
     }
-    childStatsBase.rawProjcount = (gunStatsBase.rawProjcount + gun2StatsBase.rawProjcount) / 2
+    childStatsBase.rawProjcount = (((gunStatsBase.rawProjcount + gun2StatsBase.rawProjcount) / 2) * ((gunStatsBase.multProjCount + gun2StatsBase.multProjCount) / 2));
     childStatsBase.rawProjcount = Math.floor(childStatsBase.rawProjcount)
+    if (childStatsBase.rawProjcount <= 1) {
+        childStatsBase.rawProjcount = 1
+    }
     if (childStatsBase.rawProjcount == 1) {
         document.getElementById("ChildProjCount").innerHTML = childStatsBase.rawProjcount + " Projectile Per Shot"
     } else {
         document.getElementById("ChildProjCount").innerHTML = childStatsBase.rawProjcount + " Projectiles Per Shot"
     }
-    childStatsBase.rawReSpeed = (gunStatsBase.rawReSpeed + gun2StatsBase.rawReSpeed) / 2
+    childStatsBase.rawReSpeed = (((gunStatsBase.rawReSpeed + gun2StatsBase.rawReSpeed) / 2) * ((gunStatsBase.multReSpeed + gun2StatsBase.multReSpeed) / 2));
+    childStatsBase.rawReSpeed = Math.ceil(childStatsBase.rawReSpeed)
     document.getElementById("ChildReSpeed").innerHTML = childStatsBase.rawReSpeed + " Millisecond Reload Speed"
-    childStatsBase.rawMobility = (gunStatsBase.rawMobility + gun2StatsBase.rawMobility) / 2
+    childStatsBase.rawMobility = (((gunStatsBase.rawMobility + gun2StatsBase.rawMobility) / 2) * ((gunStatsBase.multMobility + gun2StatsBase.multMobility) / 2));
+    childStatsBase.rawMobility = Math.ceil(childStatsBase.rawMobility)
     document.getElementById("ChildMobility").innerHTML = childStatsBase.rawMobility + "% Mobility"
+    childStatsBase.rawWeight = (((gunStatsBase.rawWeight + gun2StatsBase.rawWeight) / 2) * ((gunStatsBase.multWeight + gun2StatsBase.multWeight) / 2));
+    childStatsBase.rawWeight = Math.ceil(childStatsBase.rawWeight)
+        if (gun2StatsBase.rawWeight >= 50) {
+            document.getElementById("ChildWeight").innerHTML = "Single-Wield"
+        } else {
+            document.getElementById("ChildWeight").innerHTML = "Dual-Wield"
+        }
 }
