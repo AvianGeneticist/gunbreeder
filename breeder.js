@@ -359,7 +359,7 @@ function createParentGun() {
         gunStatsBase.multMagCap = 1.10
         gunStatsBase.multMobility = 1.05
         //Subtractive multipliers. Smaller = Better.
-        gunStatsBase.multSpread = 1.10
+        gunStatsBase.multSpread = 0.70
         gunStatsBase.multReSpeed = 0.95
         gunStatsBase.multWeight = 1.00
         break;
@@ -925,7 +925,7 @@ function createParentGun2() {
         gun2StatsBase.multMagCap = 1.10
         gun2StatsBase.multMobility = 1.05
         //Subtractive multipliers. Smaller = Better.
-        gun2StatsBase.multSpread = 1.10
+        gun2StatsBase.multSpread = 0.70
         gun2StatsBase.multReSpeed = 0.95
         gun2StatsBase.multWeight = 1.00
         break;
