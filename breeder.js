@@ -448,6 +448,7 @@ function createParentGun() {
         gunStatsBase.multSpread = 1.05
         gunStatsBase.multReSpeed = 1.30
         gunStatsBase.multWeight = 1.10
+        break;
         case 11: //Grenade Rifle; less powerful than the launcher, but better in most other stats.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Grenade Rifle"
         gunStatsBase.rawDamage = Math.floor(Math.random() * (186 - 120) + 120);
@@ -1013,6 +1014,7 @@ function createParentGun2() {
         gun2StatsBase.multSpread = 1.05
         gun2StatsBase.multReSpeed = 1.30
         gun2StatsBase.multWeight = 1.10
+        break;
         case 11: //Grenade Rifle; less powerful than the launcher, but better in most other stats.
         document.getElementById("Parent2").innerHTML = "Weapon Class: Grenade Rifle"
         gun2StatsBase.rawDamage = Math.floor(Math.random() * (186 - 120) + 120);
