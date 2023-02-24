@@ -252,11 +252,11 @@ function createParentGun() {
         document.getElementById("Parent1").innerHTML = "Weapon Class: Tactical Shotgun"
         gunStatsBase.rawDamage = Math.floor(Math.random() * (86 - 65) + 65);
         document.getElementById("Parent1Damage").innerHTML = gunStatsBase.rawDamage + " Total Damage Per Shot"
-        gunStatsBase.rawROF = Math.floor(Math.random() * (210 - 100) + 100);
+        gunStatsBase.rawROF = Math.floor(Math.random() * (211 - 100) + 100);
         document.getElementById("Parent1ROF").innerHTML = gunStatsBase.rawROF + " Rounds Per Minute"
         gunStatsBase.rawMagCap = Math.floor(Math.random() * (21 - 12) + 12);
         document.getElementById("Parent1MagCap").innerHTML = gunStatsBase.rawMagCap + " Rounds Per Magazine"
-        gunStatsBase.rawReSpeed = Math.floor(Math.random() * (2101 - 1300) + 800);
+        gunStatsBase.rawReSpeed = Math.floor(Math.random() * (2101 - 1300) + 1300);
         document.getElementById("Parent1ReSpeed").innerHTML = gunStatsBase.rawReSpeed + " Millisecond Reload Speed"
         gunStatsBase.rawMobility = Math.floor(Math.random() * (96 - 85) + 85);
         document.getElementById("Parent1Mobility").innerHTML = gunStatsBase.rawMobility + "% Mobility"
@@ -818,11 +818,11 @@ function createParentGun2() {
         document.getElementById("Parent2").innerHTML = "Weapon Class: Tactical Shotgun"
         gun2StatsBase.rawDamage = Math.floor(Math.random() * (86 - 65) + 65);
         document.getElementById("Parent2Damage").innerHTML = gun2StatsBase.rawDamage + " Total Damage Per Shot"
-        gun2StatsBase.rawROF = Math.floor(Math.random() * (210 - 100) + 100);
+        gun2StatsBase.rawROF = Math.floor(Math.random() * (211 - 100) + 100);
         document.getElementById("Parent2ROF").innerHTML = gun2StatsBase.rawROF + " Rounds Per Minute"
         gun2StatsBase.rawMagCap = Math.floor(Math.random() * (21 - 12) + 12);
         document.getElementById("Parent2MagCap").innerHTML = gun2StatsBase.rawMagCap + " Rounds Per Magazine"
-        gun2StatsBase.rawReSpeed = Math.floor(Math.random() * (2101 - 1300) + 800);
+        gun2StatsBase.rawReSpeed = Math.floor(Math.random() * (2101 - 1300) + 1300);
         document.getElementById("Parent2ReSpeed").innerHTML = gun2StatsBase.rawReSpeed + " Millisecond Reload Speed"
         gun2StatsBase.rawMobility = Math.floor(Math.random() * (96 - 85) + 85);
         document.getElementById("Parent2Mobility").innerHTML = gun2StatsBase.rawMobility + "% Mobility"
