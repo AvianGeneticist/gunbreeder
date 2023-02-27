@@ -399,7 +399,7 @@ function createParentGun() {
         break;
         case 9: //Anti-materiel rifle. Even less wieldly than the sniper rifle, but devastating on hit with a chance to have a blast radius.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Anti-Materiel Rifle"
-        gunStatsBase.rawDamage = Math.floor(Math.random() * (201 - 135) + 135);
+        gunStatsBase.rawDamage = Math.floor(Math.random() * (241 - 195) + 195);
         document.getElementById("Parent1Damage").innerHTML = gunStatsBase.rawDamage + " Damage Per Shot"
         gunStatsBase.rawROF = Math.floor(Math.random() * (50 - 15) + 15);
         document.getElementById("Parent1ROF").innerHTML = gunStatsBase.rawROF + " Rounds Per Minute"
@@ -409,7 +409,7 @@ function createParentGun() {
         } else {
             document.getElementById("Parent1MagCap").innerHTML = gunStatsBase.rawMagCap + " Rounds Per Magazine"
         }
-        gunStatsBase.rawReSpeed = Math.floor(Math.random() * (3601 - 2200) + 2200);
+        gunStatsBase.rawReSpeed = Math.floor(Math.random() * (4001 - 3200) + 2200);
         document.getElementById("Parent1ReSpeed").innerHTML = gunStatsBase.rawReSpeed + " Millisecond Reload Speed"
         gunStatsBase.rawMobility = Math.floor(Math.random() * (76 - 65) + 65);
         document.getElementById("Parent1Mobility").innerHTML = gunStatsBase.rawMobility + "% Mobility"
@@ -444,7 +444,7 @@ function createParentGun() {
         break;
         case 10: //Grenade Launcher; not precise, but hee hoo big boom.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Grenade Launcher"
-        gunStatsBase.rawDamage = Math.floor(Math.random() * (226 - 170) + 170);
+        gunStatsBase.rawDamage = Math.floor(Math.random() * (236 - 180) + 180);
         document.getElementById("Parent1Damage").innerHTML = gunStatsBase.rawDamage + " Damage Per Shot"
         gunStatsBase.rawROF = Math.floor(Math.random() * (60 - 20) + 20);
         document.getElementById("Parent1ROF").innerHTML = gunStatsBase.rawROF + " Rounds Per Minute"
@@ -840,7 +840,7 @@ function createParentGun() {
         break;
         case 19: //Punt Gun; absurd damage per shot over a veritable hailstorm of pellets, but poor handling and hard to move with.
         document.getElementById("Parent1").innerHTML = "Weapon Class: Punt Gun"
-        gunStatsBase.rawDamage = Math.floor(Math.random() * (451 - 360) + 360);
+        gunStatsBase.rawDamage = Math.floor(Math.random() * (401 - 360) + 360);
         document.getElementById("Parent1Damage").innerHTML = gunStatsBase.rawDamage + " Total Damage Per Shot"
         gunStatsBase.rawROF = Math.floor(Math.random() * (30 - 10) + 10);
         document.getElementById("Parent1ROF").innerHTML = gunStatsBase.rawROF + " Rounds Per Minute"
@@ -864,7 +864,7 @@ function createParentGun() {
             document.getElementById("Parent1Weight").innerHTML = "Dual-Wield"
         }
         //Additive multipliers. Bigger = Better.
-        gunStatsBase.multDamage = 2.00
+        gunStatsBase.multDamage = 1.50
         gunStatsBase.multROF = 0.40
         gunStatsBase.multBlastRadius = 0.20
         gunStatsBase.multProjCount = 2.60
@@ -1280,7 +1280,7 @@ function createParentGun2() {
             break;
             case 9: //Anti-materiel rifle. Even less wieldly than the sniper rifle, but devastating on hit with a chance to have a blast radius.
             document.getElementById("Parent2").innerHTML = "Weapon Class: Anti-Materiel Rifle"
-            gun2StatsBase.rawDamage = Math.floor(Math.random() * (201 - 135) + 135);
+            gun2StatsBase.rawDamage = Math.floor(Math.random() * (241 - 195) + 195);
             document.getElementById("Parent2Damage").innerHTML = gun2StatsBase.rawDamage + " Damage Per Shot"
             gun2StatsBase.rawROF = Math.floor(Math.random() * (50 - 15) + 15);
             document.getElementById("Parent2ROF").innerHTML = gun2StatsBase.rawROF + " Rounds Per Minute"
@@ -1325,7 +1325,7 @@ function createParentGun2() {
             break;
             case 10: //Grenade Launcher; not precise, but hee hoo big boom.
             document.getElementById("Parent2").innerHTML = "Weapon Class: Grenade Launcher"
-            gun2StatsBase.rawDamage = Math.floor(Math.random() * (226 - 170) + 170);
+            gun2StatsBase.rawDamage = Math.floor(Math.random() * (236 - 180) + 180);
             document.getElementById("Parent2Damage").innerHTML = gun2StatsBase.rawDamage + " Damage Per Shot"
             gun2StatsBase.rawROF = Math.floor(Math.random() * (60 - 20) + 20);
             document.getElementById("Parent2ROF").innerHTML = gun2StatsBase.rawROF + " Rounds Per Minute"
@@ -1721,7 +1721,7 @@ function createParentGun2() {
             break;
             case 19: //Punt Gun; absurd damage per shot over a veritable hailstorm of pellets, but poor handling and hard to move with.
             document.getElementById("Parent2").innerHTML = "Weapon Class: Punt Gun"
-            gun2StatsBase.rawDamage = Math.floor(Math.random() * (451 - 360) + 360);
+            gun2StatsBase.rawDamage = Math.floor(Math.random() * (401 - 360) + 360);
             document.getElementById("Parent2Damage").innerHTML = gun2StatsBase.rawDamage + " Total Damage Per Shot"
             gun2StatsBase.rawROF = Math.floor(Math.random() * (30 - 10) + 10);
             document.getElementById("Parent2ROF").innerHTML = gun2StatsBase.rawROF + " Rounds Per Minute"
@@ -1745,7 +1745,7 @@ function createParentGun2() {
                 document.getElementById("Parent2Weight").innerHTML = "Dual-Wield"
             }
             //Additive multipliers. Bigger = Better.
-            gun2StatsBase.multDamage = 2.00
+            gun2StatsBase.multDamage = 1.50
             gun2StatsBase.multROF = 0.40
             gun2StatsBase.multBlastRadius = 0.20
             gun2StatsBase.multProjCount = 2.60
